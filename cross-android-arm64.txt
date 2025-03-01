@@ -23,5 +23,5 @@ android_ndk = '/Volumes/Develop/AndroidSdk/ndk/28.0.13004108'
 # Build command:
 # export ANDROID_NDK_HOME=/Volumes/Develop/AndroidSdk/ndk/28.0.13004108
 # export PATH=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/darwin-x86_64/bin:$PATH
-# meson setup build-android --cross-file cross-android-arm64.txt -Dbzip2=disabled
+# meson setup build-android --cross-file cross-android-arm64.txt -Dbrotli=disabled -Dbzip2=disabled -Dharfbuzz=disabled -Dpng=disabled -Dzlib=disabled
 # meson compile -C build-android

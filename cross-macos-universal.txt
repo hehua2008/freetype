@@ -20,5 +20,5 @@ objcpp_args = ['-arch', 'x86_64', '-arch', 'arm64', '-isysroot', '/Applications/
 default_library = 'static'
 
 # Build command:
-# meson setup build-macos --cross-file cross-macos-universal.txt
+# meson setup build-macos --cross-file cross-macos-universal.txt -Dbrotli=disabled -Dbzip2=disabled -Dharfbuzz=disabled -Dpng=disabled -Dzlib=disabled
 # meson compile -C build-macos

@@ -23,5 +23,5 @@ default_library = 'static'
 needs_exe_wrapper = true
 
 # Build command:
-# meson setup build-ios --cross-file cross-ios-arm64.txt
+# meson setup build-ios --cross-file cross-ios-arm64.txt -Dbrotli=disabled -Dbzip2=disabled -Dharfbuzz=disabled -Dpng=disabled -Dzlib=disabled
 # meson compile -C build-ios
