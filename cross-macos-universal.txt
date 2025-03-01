@@ -1,0 +1,24 @@
+[host_machine]
+system = 'darwin'
+cpu_family = 'x86_64'  # Meson requires this to be set to x86_64 for universal builds
+cpu = 'x86_64'         # Meson requires this to be set to x86_64 for universal builds
+endian = 'little'
+
+[binaries]
+c = 'clang'
+cpp = 'clang++'
+ar = 'ar'
+strip = 'strip'
+pkg-config = 'pkg-config'
+
+[built-in options]
+c_args = ['-arch', 'x86_64', '-arch', 'arm64', '-isysroot', '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk', '-mmacos-version-min=12.5']
+cpp_args = ['-arch', 'x86_64', '-arch', 'arm64', '-isysroot', '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk', '-mmacos-version-min=12.5']
+objc_args = ['-arch', 'x86_64', '-arch', 'arm64', '-isysroot', '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk', '-mmacos-version-min=12.5']
+objcpp_args = ['-arch', 'x86_64', '-arch', 'arm64', '-isysroot', '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk', '-mmacos-version-min=12.5']
+
+default_library = 'static'
+
+# Build command:
+# meson setup build-macos --cross-file cross-macos-universal.txt
+# meson compile -C build-macos

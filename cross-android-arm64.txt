@@ -1,0 +1,27 @@
+[host_machine]
+system = 'linux'
+cpu_family = 'aarch64'
+cpu = 'arm64'
+endian = 'little'
+
+[binaries]
+c = 'aarch64-linux-android35-clang'
+cpp = 'aarch64-linux-android35-clang++'
+ar = 'llvm-ar'
+strip = 'llvm-strip'
+pkg-config = 'pkg-config'
+
+[built-in options]
+c_args = ['-target', 'aarch64-linux-android', '-D__ANDROID_API__=24', '-fPIC', '-I/Volumes/Develop/AndroidSdk/ndk/28.0.13004108/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include']
+cpp_args = ['-target', 'aarch64-linux-android', '-D__ANDROID_API__=24', '-fPIC', '-I/Volumes/Develop/AndroidSdk/ndk/28.0.13004108/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include']
+default_library = 'static'
+
+[properties]
+needs_exe_wrapper = true
+android_ndk = '/Volumes/Develop/AndroidSdk/ndk/28.0.13004108'
+
+# Build command:
+# export ANDROID_NDK_HOME=/Volumes/Develop/AndroidSdk/ndk/28.0.13004108
+# export PATH=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/darwin-x86_64/bin:$PATH
+# meson setup build-android --cross-file cross-android-arm64.txt -Dbzip2=disabled
+# meson compile -C build-android
